@@ -38,7 +38,7 @@ def main():
 	check(IMG_Init(IMG_INIT_PNG),'IMG_Init')
 	try:
 		csv=csvparse(open('level.csv').read())
-	catch ex:
+	except ex:
 		print('Load and Parse Level: Not OK! %s'%ex)
 		bye()
 		sys.exit(1)
