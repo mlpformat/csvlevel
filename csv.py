@@ -36,7 +36,12 @@ def main():
 	global win,fb,spr,csv
 	check(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_EVENTS)==0,'SDL_Init')
 	check(IMG_Init(IMG_INIT_PNG),'IMG_Init')
-	csv=csvparse(open('level.csv').read())
+	try:
+		csv=csvparse(open('level.csv').read())
+	catch ex:
+		print('Load and Parse Level: Not OK! %s'%ex)
+		bye()
+		sys.exit(1)
 	spr={}
 	for i in csv:
 		for j in i:
