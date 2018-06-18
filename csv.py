@@ -19,7 +19,6 @@ def check(hope,fn):
 def csvparse(f):
 	return [x.split(',') for x in f.split('\n')]
 def loop():
-	global win,fb,csv
 	for y,i in enumerate(csv):
 		for x,j in enumerate(i):
 			s=spr[j]
